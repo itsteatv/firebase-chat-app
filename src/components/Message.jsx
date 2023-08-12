@@ -16,7 +16,7 @@ function Message({ message }) {
 
     return (
         <div>
-            <div className={`chat ${message.uid === currentUser.uid ? "chat-end mb-16" : "chat-start"}`}>
+            <div className={`chat ${message.uid === currentUser.uid ? "chat-end mb-16" : "chat-start mb-16"}`}>
                 <div className="chat-image avatar">
                     <div className="w-10 rounded-full">
                         <img src={message.avatar} />
