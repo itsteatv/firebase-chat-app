@@ -1,9 +1,9 @@
-import firebase from 'firebase/app';
+import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import 'firebase/firestore';
-import 'firebase/auth';
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-const firebaseApp = firebase.initializeApp({
+const firebaseConfig = {
     apiKey: "AIzaSyA6uk2CuibuU-IBUAdGOB9af2UAuYfbG-w",
     authDomain: "fir-chat-app-69bea.firebaseapp.com",
     projectId: "fir-chat-app-69bea",
@@ -11,10 +11,10 @@ const firebaseApp = firebase.initializeApp({
     messagingSenderId: "355097017841",
     appId: "1:355097017841:web:1596817b01ae11ad0ed850",
     measurementId: "G-TNHNNR7FMW"
-})
+};
 
-const db = firebaseApp.firestore();
-const auth = firebaseApp.auth();
-const analytics = getAnalytics(firebaseApp);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+export const db = getFirestore(app);
 
-export { db, auth }
+export const auth = getAuth(app);
