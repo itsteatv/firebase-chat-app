@@ -27,9 +27,7 @@ function SignIn() {
 
   const handleLogin = async function () {
     try {
-      if (!isSigningIn) {
-        await signInWithGoogle();
-      }
+      await signInWithGoogle();
     }
     catch (error) {
       toast.error("An error occurred" + error.message);
